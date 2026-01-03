@@ -7,65 +7,65 @@ export default function Sidebar() {
             {/* Sticky Container */}
             <div className="sticky top-20 space-y-4">
 
-                {/* Threaded Fittings Widget */}
+                {/* Pipes & Tubes Widget */}
                 <div className="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-slate-800">
-                    <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-3 border-b dark:border-slate-700 pb-2">Threaded Fittings</h3>
+                    <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-3 border-b dark:border-slate-700 pb-2">Pipes & Tubes</h3>
                     <ul className="space-y-1.5 text-sm">
                         <li>
-                            <Link href="/products/stainless-steel-threaded-forged-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Stainless Steel
+                            <Link href="/products/stainless-steel-pipe-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Stainless Steel Pipe
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/carbon-steel-threaded-forged-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Carbon Steel
+                            <Link href="/products/stainless-steel-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Stainless Steel Tube
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/alloy-steel-threaded-forged-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Alloy Steel
+                            <Link href="/products/carbon-steel-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Carbon Steel Pipe
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/inconel-alloy-threaded-forged-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Inconel Alloy
+                            <Link href="/products/alloy-steel-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Alloy Steel Pipe
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/duplex-steel-s31803-s32205-threaded-forged-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Duplex Steel
+                            <Link href="/products/duplex-steel-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Duplex Steel Pipe
                             </Link>
                         </li>
                     </ul>
                 </div>
 
-                {/* Socket Weld Widget */}
+                {/* Specialty Alloys Widget */}
                 <div className="bg-white dark:bg-slate-900 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-slate-800">
-                    <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-3 border-b dark:border-slate-700 pb-2">Socket Weld Fittings</h3>
+                    <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-3 border-b dark:border-slate-700 pb-2">Specialty Alloys</h3>
                     <ul className="space-y-1.5 text-sm">
                         <li>
-                            <Link href="/products/stainless-steel-socket-weld-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Stainless Steel
+                            <Link href="/products/nickel-alloy-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Nickel Alloy Pipes
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/carbon-steel-socket-weld-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Carbon Steel
+                            <Link href="/products/inconel-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Inconel Pipes
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/alloy-steel-socket-weld-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Alloy Steel
+                            <Link href="/products/monel-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Monel Pipes
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/inconel-alloy-socket-weld-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Inconel Alloy
+                            <Link href="/products/hastelloy-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Hastelloy Pipes
                             </Link>
                         </li>
                         <li>
-                            <Link href="/products/duplex-steel-s31803-s32205-socket-weld-fittings-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
-                                <span className="mr-2">›</span> Duplex Steel
+                            <Link href="/products/titanium-pipes-tubes-manufacturer" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+                                <span className="mr-2">›</span> Titanium Pipes
                             </Link>
                         </li>
                     </ul>

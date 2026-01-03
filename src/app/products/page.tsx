@@ -22,7 +22,6 @@ export default async function ProductsIndexPage() {
             .eq('company_id', process.env.NEXT_PUBLIC_COMPANY_ID!)
             .eq('type', 'product')
             .not('slug', 'eq', 'about-us') // Explicitly exclude About Us
-            .not('title', 'ilike', '%Pipes%') // Exclude Pipes if they are polluting
             .order('title', { ascending: true });
 
         posts = result.data;
@@ -61,8 +60,7 @@ export default async function ProductsIndexPage() {
                         if (nonProducts.some(term => title.toLowerCase().includes(term) || slug.includes(term))) return false;
 
 
-                        // Exclude Non-Forged Fittings (e.g. Pipes, if accidentally mixed)
-                        if (title.includes('pipe') || title.includes('tube')) return false;
+
 
                         // Exclude Location-Based SEO Spam (Duplicates)
                         // Using .includes() to catch suffixes like '-uae', '-uaer', '-oman', etc. anywhere in the slug

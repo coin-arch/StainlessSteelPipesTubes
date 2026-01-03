@@ -9,33 +9,30 @@ import Image from 'next/image';
 const SLIDES = [
     {
         id: 1,
-        // Legacy Slider 1
-        image: '/images/legacy-slider/slider-1.jpg',
-        subtitle: 'Forged Fittings Manufacturer',
-        title: 'Precision Threaded & Socket Weld Fittings',
-        description: 'ISO 9001:2015 Certified. Specialized in High Pressure Fittings for Oil, Gas, and Petrochemical Industries.',
-        cta: 'Contact Us',
-        link: '/contact-us'
+        image: '/images/banner/bnr4.jpg',
+        subtitle: 'Global Manufacturer & Exporter',
+        title: 'Stainless Steel Pipes & Tubes',
+        description: 'Premium quality Seamless and Welded Pipes in 304/L, 316/L, and 904L Grades. ISO 9001:2015 Certified.',
+        cta: 'View Catalog',
+        link: '/products/stainless-steel-pipe-manufacturer'
     },
     {
         id: 2,
-        // Legacy Slider 2
-        image: '/images/legacy-slider/slider-2.jpg',
-        subtitle: 'Material Excellence',
-        title: 'Stainless Steel & Carbon Steel',
-        description: 'Premium quality 304/L, 316/L, A105, A350 LF2 Forged Fittings designed for extreme durability.',
-        cta: 'View Forged Fittings',
-        link: '/products/stainless-steel-threaded-forged-fittings-manufacturer'
+        image: '/images/slider/banner2.jpg',
+        subtitle: 'High Performance Alloys',
+        title: 'Nickel Alloy & Inconel Tubes',
+        description: 'Specialized in Monel, Inconel, Hastelloy, and Duplex Steel Tubes for extreme environments.',
+        cta: 'View Alloys',
+        link: '/products/nickel-alloy-pipes-tubes-manufacturer'
     },
     {
         id: 3,
-        // Legacy Slider 3
-        image: '/images/legacy-slider/slider-3.jpg',
-        subtitle: 'Exotic Alloys',
-        title: 'Nickel & Titanium Alloys',
-        description: 'Expertise in Monel, Inconel, Hastelloy, and Titanium fittings for specialized applications.',
-        cta: 'View Exotic Alloys',
-        link: '/products/high-nickel-alloy-threaded-forged-fittings-manufacturer'
+        image: '/images/slider/banner3.jpg',
+        subtitle: 'Industrial Solutions',
+        title: 'Carbon & Alloy Steel Pipes',
+        description: 'High-pressure Carbon Steel and Alloy Steel Pipes for Oil & Gas and Power Generation industries.',
+        cta: 'Learn More',
+        link: '/products/carbon-steel-pipes-tubes-manufacturer'
     }
 ];
 

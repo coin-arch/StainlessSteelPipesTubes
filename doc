@@ -171,3 +171,104 @@ Sales: You sign a new client (e.g., "Steel Titans").
 Setup: You run the "Phase 1" prompt to clone the template and extract their old data.
 Admin: You give the client access to the shared Admin Panel to manage their own blogs/products.
 Result: They get a premium, fast, modern website; You get a maintainable, unified codebase.
+
+# MASTER PROTOCOL: Launching a New Client Site
+**Process Version:** 3.0 (The "Factory One-Shot" Workflow)
+**Goal:** Convert a Legacy HTML site -> Modern Next.js App in < 30 Minutes.
+
+> [!IMPORTANT]
+> **Use this file as your primary instruction manual.**
+> When starting a new session with an AI, verify it has read this file first.
+
+---
+
+## 🏗️ Phase 1: Setup & Extraction (The "Lift")
+**Action:** Prepare the workspace and grab the raw materials.
+
+1.  **Clone the Template**:
+    *   Copy the entire `client-site` folder to `projects/<new-client-name>`.
+    *   Open this new folder in VS Code.
+
+2.  **Mount Legacy Site**:
+    *   Create a folder named `legacy_source` in the root.
+    *   **Paste the entire old HTML folder** (downloaded from cPanel/FTP) into `legacy_source`.
+    *   *Why?* This gives us local access to parse HTML and extract images without network lag.
+
+3.  **Extract Assets**:
+    *   Move all images/PDFs from `legacy_source/images` (or `public`) to `src/public/images/products`.
+    *   *Tip:* Keep the folder structure if possible to make mapping easier.
+
+---
+
+## 🗄️ Phase 2: Database Preparation
+**Action:** Create the "Bucket" for the client's data.
+
+1.  **Create Company**:
+    *   Open your **Supabase Dashboard** -> `companies` table.
+    *   Insert a new row: `name: "New Client Name"`.
+    *   **Copy the returned ID** (e.g., `88e00ef3...`).
+
+2.  **Configure Environment**:
+    *   Rename `.env.local.example` -> `.env.local`.
+    *   Update `NEXT_PUBLIC_COMPANY_ID` with the ID you just copied.
+
+---
+
+## 🛠️ Phase 3: Data Migration (The "Shift")
+**Action:** Turn HTML chaos into Structured JSON.
+
+1.  **Analyze Structure**:
+    *   Open one HTML file from `legacy_source`.
+    *   Identify the "Content Selector" (e.g., `div.product-details`, `table.spec-table`).
+
+2.  **Run the Converter**:
+    *   We have a universal script: `src/scripts/parse-legacy.js` (you may need to create/tweak this per client).
+    *   **Goal:** Read all HTML files -> Extract Title, Content, Metadata -> Output `migration_data.json`.
+    *   *Prompt to AI:* "Parse the HTML files in `legacy_source`. Extract the content inside `.main-container`. Output a JSON file."
+
+3.  **Import to Supabase**:
+    *   Run: `node src/scripts/import-industrial.js <COMPANY_ID>`.
+    *   *Note:* Ensure the script reads from your new `migration_data.json`.
+
+---
+
+## 🎨 Phase 4: Frontend Integration (The "Connect")
+**Action:** Make it look like *their* brand.
+
+1.  **Brand Identity**:
+    *   **Logo**: Replace `public/images/logo.png`.
+    *   **Favicon**: Replace `public/favicon.ico`.
+    *   **Colors**: Open `src/app/globals.css`. Update `--primary` variable to match their brand color.
+
+2.  **Verify Content Connection**:
+    *   Run `npm run dev`.
+    *   Visit `localhost:3000`.
+    *   **Check:** Do you see *their* products? (If yes, Supabase connection is working).
+
+---
+
+## 🚀 Phase 5: Deployment & Handover
+**Action:** Go Live.
+
+1.  **Build Check**:
+    *   Run `npm run build`.
+    *   Fix any TypeScript errors (usually 0 if you didn't touch core logic).
+
+2.  **Deploy**:
+    *   Push to GitHub.
+    *   Connect to Vercel.
+    *   **Add Environment Variables** (`NEXT_PUBLIC_SUPABASE_URL`, `ANON_KEY`, `COMPANY_ID`) in Vercel Project Settings.
+
+---
+
+## 🤖 AI Prompt to Start
+*Copy-paste this when you open the new project:*
+
+> "I am setting up a new client site: **[Client Name]**.
+> I have cloned the codebase and placed their old HTML site in `legacy_source`.
+>
+> 1.  Help me analyze `legacy_source/index.html` to find the content structure.
+> 2.  Help me script the extraction of data into `migration.json`.
+> 3.  I have their Company ID: `[UUID]`.
+>
+> Let's start Phase 3 (Data Migration)."

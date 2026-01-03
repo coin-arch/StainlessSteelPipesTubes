@@ -26,13 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!post) {
         return {
-            title: 'Product Not Found | Metal Ministry Inc.',
+            title: 'Product Not Found | Stainless Steel Pipes Tubes',
         };
     }
 
     const title = post.meta_title || `${post.title} | Metal Ministry Inc.`;
-    const description = post.meta_description || `Premium quality ${post.title} from Metal Ministry Inc. Global exporter of stainless steel, nickel alloys, and duplex steel products.`;
-    const url = `https://metalministry.in/products/${slug}`;
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stainlesssteelpipestubes.in';
+    const description = post.meta_description || `Premium quality ${post.title} from Stainless Steel Pipes Tubes.`;
+    const url = `${baseUrl}/products/${slug}`;
 
     return {
         title,
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description,
             url,
             type: 'article',
-            siteName: 'Metal Ministry Inc.',
+            siteName: 'Stainless Steel Pipes Tubes',
         },
         twitter: {
             card: 'summary_large_image',

@@ -42,8 +42,9 @@ export default function ContactUsPage() {
                                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Product Interest</label>
                                 <select className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 transition-all text-gray-900 dark:text-white outline-none cursor-pointer">
                                     <option>Stainless Steel Pipes</option>
-                                    <option>Butt Weld Fittings</option>
-                                    <option>Flanges</option>
+                                    <option>Stainless Steel Tubes</option>
+                                    <option>Sheet, Plate & Coil</option>
+                                    <option>Round Bars</option>
                                     <option>High Nickel Alloys</option>
                                     <option>Other / General Inquiry</option>
                                 </select>
@@ -71,12 +72,11 @@ export default function ContactUsPage() {
                                         <MapPin size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Registered Office</h3>
+                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Company Address</h3>
                                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                            Prasad Chambers<br />
-                                            Tata Rd No 2, Charni Road East,<br />
-                                            Opera House, Girgaon,<br />
-                                            Mumbai, Maharashtra 400004
+                                            Siddhivinayak Co-op Hsg.Soc, (Durgadas Building)<br />
+                                            Shop No 3, Ground Floor, Ardeshir Dadi Cross Lane,<br />
+                                            Near CP Tank, Mumbai - 400004.
                                         </p>
                                     </div>
                                 </div>
@@ -86,9 +86,9 @@ export default function ContactUsPage() {
                                         <Phone size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Phone</h3>
+                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Phone Numbers</h3>
                                         <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">+91-9892171042</p>
-                                        <p className="text-sm text-gray-500 mt-1">(Mon-Sat, 9am - 7pm IST)</p>
+                                        <p className="text-sm text-gray-500 mt-1">(Mon-Sat, 10.00 - 07.00)</p>
                                     </div>
                                 </div>
 
@@ -97,9 +97,9 @@ export default function ContactUsPage() {
                                         <Mail size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Email</h3>
+                                        <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">E-mail</h3>
                                         <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">enquiry@metalministry.in</p>
-                                        <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
+                                        <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">info@metalministry.in</p>
                                     </div>
                                 </div>
                             </div>

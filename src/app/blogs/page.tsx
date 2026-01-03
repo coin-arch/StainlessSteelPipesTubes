@@ -19,6 +19,7 @@ export default async function BlogsIndexPage() {
         .select('*')
         .eq('company_id', process.env.NEXT_PUBLIC_COMPANY_ID!)
         .eq('type', 'blog')
+        .not('title', 'ilike', 'Blog %') /* Exclude template titles starting with "Blog " */
         .order('published_at', { ascending: false });
 
     if (error) {

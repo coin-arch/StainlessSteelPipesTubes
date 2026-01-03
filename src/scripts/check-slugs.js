@@ -1,54 +1,112 @@
 
 const { createClient } = require('@supabase/supabase-js');
-const dotenv = require('dotenv');
 const path = require('path');
+const fs = require('fs');
 
-const rootEnvPath = path.join(__dirname, '../../.env');
-const clientEnvPath = path.join(__dirname, '../../.env.local');
+const envPath = path.resolve(__dirname, '../../.env.local');
+const envConfig = require('dotenv').parse(fs.readFileSync(envPath));
 
-// Load .env.local for keys
-const localConfig = dotenv.config({ path: clientEnvPath, override: true });
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-const COMPANY_ID = process.env.NEXT_PUBLIC_COMPANY_ID;
+const supabase = createClient(envConfig.NEXT_PUBLIC_SUPABASE_URL, envConfig.SUPABASE_SERVICE_ROLE_KEY || envConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
-async function check() {
-    console.log("Checking slugs for Company:", COMPANY_ID);
+const GRID_HTML = `
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-seamless-pipe-manufacturer"><img src="/images/our-work/products/stainless-steel/stainless-steel-seamless-pipe.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-seamless-pipe-manufacturer">SS Seamless Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.6s">
+        <div class="dlab-box service-box-3"> 
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-polished-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-polished-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-polished-pipe-exporter">SS Polished Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-square-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-square-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-square-pipe-exporter">SS Square Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-round-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-round-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-round-pipe-exporter">SS Round Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+     <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-rectangular-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-rectangular-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-rectangular-pipe-exporter">SS Rectangular Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-oval-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-oval-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-oval-pipe-exporter">SS Oval Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-hydraulic-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-hydraulic-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-hydraulic-pipe-exporter">SS Hydraulic Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 m-b50 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+        <div class="dlab-box service-box-3">
+            <div class="dlab-media radius-sm dlab-img-overlay1 zoom dlab-img-effect"> 
+                <a href="/products/stainless-steel-hollow-pipe-exporter"><img src="/images/our-work/products/stainless-steel/stainless-steel-hollow-pipes.jpg" alt=""></a> 
+            </div>
+            <div class="dlab-info">
+                <h4 class="title"><a href="/products/stainless-steel-hollow-pipe-exporter">SS Hollow Pipe</a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+`;
 
-    // 1. Check for "About Us" appearing as a product
-    const { data: about, error: aboutError } = await supabase
+async function updateContent() {
+    const slug = 'stainless-steel-pipe-manufacturer';
+    const company_id = envConfig.NEXT_PUBLIC_COMPANY_ID;
+
+    console.log(`Updating content for: ${slug} (Company: ${company_id})`);
+
+    const { error } = await supabase
         .from('post')
-        .select('title, slug, type')
-        .ilike('title', '%About Us%')
-        .eq('company_id', COMPANY_ID);
+        .update({ content: GRID_HTML })
+        .eq('slug', slug)
+        .eq('company_id', company_id);
 
-    console.log("\n--- 'About Us' Entries ---");
-    console.table(about);
-
-    // 2. Check for "Nickel Alloy" valid slugs
-    const { data: nickel, error: nickelError } = await supabase
-        .from('post')
-        .select('title, slug')
-        .ilike('slug', '%nickel%')
-        .eq('company_id', COMPANY_ID)
-        .eq('type', 'product');
-
-    console.log("\n--- Valid 'Nickel' Product Slugs ---");
-    if (nickel) {
-        nickel.forEach(p => console.log(p.slug));
-    }
-
-    // 3. unexpected metal ministry products?
-    // Maybe check for "Pipes" if they shouldn't be there?
-    const { data: pipes, error: pipesError } = await supabase
-        .from('post')
-        .select('title, slug')
-        .ilike('title', '%Pipes%')
-        .eq('company_id', COMPANY_ID)
-        .eq('type', 'product')
-        .limit(5);
-
-    console.log("\n--- 'Pipes' entries (Should these be here?) ---");
-    if (pipes) console.table(pipes);
+    if (error) console.error("Error updating content:", error);
+    else console.log("SUCCESS: Content updated with grid HTML.");
 }
 
-check();
+updateContent();

@@ -33,13 +33,13 @@ export default function Footer() {
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src="/images/logo.png"
-                                alt="Forged Fittings Manufacturer"
+                                alt="Stainless Steel Pipes Tubes"
                                 className="h-20 w-auto brightness-0 invert opacity-90"
                             />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            ISO 9001:2015 Certified Manufacturer & Exporter of High-Pressure Forged Fittings.
-                            Specializing in Stainless Steel, Carbon Steel, and High Nickel Alloys.
+                            ISO 9001:2015 Certified Manufacturer & Exporter of Stainless Steel Pipes, Tubes, and High Nickel Alloys.
+                            Serving Oil & Gas, Petrochemical, and Power Generation Industries globally.
                         </p>
                         <div className="flex gap-4">
                             <SocialLink icon={<Facebook size={18} />} href="#" />
@@ -64,14 +64,14 @@ export default function Footer() {
 
                     {/* Core Products */}
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-6">Forged Fittings</h4>
+                        <h4 className="text-white font-bold text-lg mb-6">Pipes & Tubes</h4>
                         <ul className="space-y-4">
-                            <li><FooterLink href="/products/stainless-steel-threaded-forged-fittings-manufacturer">Stainless Steel Threaded</FooterLink></li>
-                            <li><FooterLink href="/products/carbon-steel-threaded-forged-fittings-manufacturer">Carbon Steel Threaded</FooterLink></li>
-                            <li><FooterLink href="/products/alloy-steel-threaded-forged-fittings-manufacturer">Alloy Steel Threaded</FooterLink></li>
-                            <li><FooterLink href="/products/stainless-steel-socket-weld-forged-fittings-manufacturer">Stainless Socket Weld</FooterLink></li>
-                            <li><FooterLink href="/products/carbon-steel-socket-weld-forged-fittings-manufacturer">Carbon Socket Weld</FooterLink></li>
-                            <li><FooterLink href="/products/alloy-steel-socket-weld-forged-fittings-manufacturer">Alloy Socket Weld</FooterLink></li>
+                            <li><FooterLink href="/products/stainless-steel-pipe-manufacturer">Stainless Steel Pipe</FooterLink></li>
+                            <li><FooterLink href="/products/stainless-steel-tubes-manufacturer">Stainless Steel Tube</FooterLink></li>
+                            <li><FooterLink href="/products/carbon-steel-pipes-tubes-manufacturer">Carbon Steel Pipe</FooterLink></li>
+                            <li><FooterLink href="/products/nickel-alloy-pipes-tubes-manufacturer">Nickel Alloy Pipe</FooterLink></li>
+                            <li><FooterLink href="/products/alloy-steel-pipes-tubes-manufacturer">Alloy Steel Pipe</FooterLink></li>
+                            <li><FooterLink href="/products/duplex-steel-pipes-tubes-manufacturer">Duplex Steel Tube</FooterLink></li>
                         </ul>
                     </div>
 
@@ -84,11 +84,11 @@ export default function Footer() {
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h5 className="text-white font-medium mb-1">Head Office</h5>
+                                    <h5 className="text-white font-medium mb-1">Company Address</h5>
                                     <p className="text-gray-400 text-sm">
-                                        Prasad Chambers, Tata Rd No 2, <br />
-                                        Charni Road East, Opera House,<br />
-                                        Girgaon, Mumbai - 400004
+                                        Siddhivinayak Co-op Hsg.Soc, (Durgadas Building)<br />
+                                        Shop No 3, Ground Floor, Ardeshir Dadi Cross Lane,<br />
+                                        Near CP Tank, Mumbai - 400004
                                     </p>
                                 </div>
                             </li>
@@ -97,7 +97,7 @@ export default function Footer() {
                                     <Phone size={20} />
                                 </div>
                                 <div>
-                                    <h5 className="text-white font-medium mb-1">Phone</h5>
+                                    <h5 className="text-white font-medium mb-1">Phone Numbers</h5>
                                     <a href="tel:+919892171042" className="text-gray-400 text-sm hover:text-white transition-colors block">+91-9892171042</a>
                                 </div>
                             </li>
@@ -106,7 +106,7 @@ export default function Footer() {
                                     <Mail size={20} />
                                 </div>
                                 <div>
-                                    <h5 className="text-white font-medium mb-1">Email</h5>
+                                    <h5 className="text-white font-medium mb-1">E-mail</h5>
                                     <a href="mailto:enquiry@metalministry.in" className="text-gray-400 text-sm hover:text-white transition-colors block">enquiry@metalministry.in</a>
                                     <a href="mailto:info@metalministry.in" className="text-gray-400 text-sm hover:text-white transition-colors block">info@metalministry.in</a>
                                 </div>
@@ -118,7 +118,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} Metal Ministry Inc. All rights reserved.
+                        © {new Date().getFullYear()} Stainless Steel Pipes Tubes. All rights reserved.
                     </p>
                     <div className="flex gap-8 text-sm text-gray-500">
                         <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

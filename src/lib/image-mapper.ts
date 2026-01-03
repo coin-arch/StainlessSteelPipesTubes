@@ -2,53 +2,20 @@
 export const FALLBACK_IMAGE = '/images/slider-hd-1.png';
 
 const SPECIFIC_MAPPINGS: Record<string, string> = {
-    // Homepage "Category" Slugs -> Specific Legacy Grade Images
-    'stainless-steel-threaded-forged-fittings-manufacturer': 'stainless-steel-304-threaded-forged-fittings-supplier.jpg',
-    'carbon-steel-threaded-forged-fittings-manufacturer': 'carbon-steel-a105-threaded-forged-fittings-supplier.jpg',
-    'stainless-steel-socket-weld-fittings-manufacturer': 'stainless-steel-304-socketweld-fittings-supplier.jpg',
-    'alloy-steel-threaded-forged-fittings-manufacturer': 'alloy-steel-f11-threaded-forged-fittings-supplier.jpg',
-    'duplex-steel-s31803-s32205-threaded-forged-fittings-manufacturer': 'duplex-steel-s31803-s32205-threaded-forged-fittings-supplier.jpg',
-    'high-nickel-alloy-threaded-forged-fittings-manufacturer': 'inconel-alloy-625-threaded-forged-fittings-supplier.jpg',
-    'nickel-alloy-threaded-forged-fittings-manufacturer': 'nickel-alloy-200-threaded-forged-fittings-supplier.jpg',
-    // Fix Typos in filenames (legacy mismatches)
-    'inconel-alloy-825-socketweld-fittings-supplier': '/images/products/inconel-alloy-825-sockeweld-fittings-supplier.jpg', // missing 't'
-    'stainless-steel-347-socketweld-fittings-supplier': '/images/products/stainless-steel-347-sockeweld-fittings-supplier.jpg', // missing 't'
+    // New Pipes & Tubes Mappings (Mapping to real images)
+    'stainless-steel-pipe-manufacturer': 'our-work/products/stainless-steel/stainless-steel-seamless-pipe.jpg',
+    'stainless-steel-tubes-manufacturer': 'our-work/products/stainless-steel/tubes/stainless-steel-304-tubes.jpg',
+    'carbon-steel-pipes-tubes-manufacturer': 'our-work/products/carbon-steel/carbon-steel-a252-seamless-pipe-tubes.jpg',
+    'nickel-alloy-pipes-tubes-manufacturer': 'our-work/products/nickel-alloy/nickel-alloy-pipes-tubes.jpg',
+    'alloy-steel-pipes-tubes-manufacturer': 'our-work/alloy-steel-pipes.jpg',
+    'duplex-steel-pipes-tubes-manufacturer': 'our-work/duplex-steel-pipes-tubes.jpg', // Verified exists in root
+    'stainless-steel-sheet-plate-coil-manufacturer': 'our-work/products/stainless-steel/stainless-steel-polished-pipes.jpg', // Fallback
+    'stainless-steel-round-bar-manufacturer': 'our-work/products/stainless-steel/stainless-steel-round-pipes.jpg', // Fallback
+    'cupro-nickel-pipes-tubes-manufacturer': 'our-work/products/nickel-alloy/nickel-alloy-pipes-tubes.jpg', // Shared image
+    'titanium-pipes-tubes-manufacturer': 'our-work/titanium-pipes-tubes.jpg', // Verified exists
 
-    // Mappings for missing specific images (Fallbacks)
-    'titanium-alloy-grade-2-socketweld-fittings-supplier': '/images/products/titanium-alloy-socketweld-fittings-supplier.jpg',
-    'stainless-steel-316-316l-socketweld-fittings-supplier': '/images/products/stainless-steel-304-socketweld-fittings-supplier.jpg', // Fallback to 304
-    'hastelloy-socketweld-fittings-supplier': '/images/products/hastelloy-c276-socketweld-fittings-supplier.jpg', // Fallback to C276
-    'hastelloy-threaded-forged-fittings-supplier': '/images/products/hastelloy-c276-threaded-forged-fittings-supplier.jpg', // Fallback to C276
-    'inconel-alloy-socketweld-fittings-supplier': '/images/products/inconel-alloy-600-socketweld-fittings-supplier.jpg', // Fallback to 600
-    'inconel-alloy-threaded-forged-fittings-supplier': '/images/products/inconel-alloy-600-threaded-forged-fittings-supplier.jpg', // Fallback to 600
-    'monel-alloy-socketweld-fittings-supplier': '/images/products/monel-alloy-400-socketweld-fittings-supplier.jpg', // Fallback to 400
-    'monel-alloy-threaded-forged-fittings-supplier': '/images/products/monel-alloy-400-threaded-forged-fittings-supplier.jpg', // Fallback to 400
-
-    // Correct Mappings for "Stockist" Items (which have -manufacturer slugs)
-    'carbon-steel-socket-weld-fittings-manufacturer': '/images/products/carbon-steel-a105-socketweld-fittings-supplier.jpg', // Fallback to A105
-    'hastelloy-socket-weld-fittings-manufacturer': '/images/products/hastelloy-c276-socketweld-fittings-supplier.jpg',
-    'hastelloy-threaded-forged-fittings-manufacturer': '/images/products/hastelloy-c276-threaded-forged-fittings-supplier.jpg',
-    'inconel-alloy-825-socket-weld-fittings-manufacturer': '/images/products/inconel-alloy-825-sockeweld-fittings-supplier.jpg', // typo in file
-    'inconel-alloy-socket-weld-fittings-manufacturer': '/images/products/inconel-alloy-600-socketweld-fittings-supplier.jpg',
-    'inconel-alloy-threaded-forged-fittings-manufacturer': '/images/products/inconel-alloy-600-threaded-forged-fittings-supplier.jpg',
-    'monel-alloy-socket-weld-fittings-manufacturer': '/images/products/monel-alloy-400-socketweld-fittings-supplier.jpg',
-    'monel-alloy-threaded-forged-fittings-manufacturer': '/images/products/monel-alloy-400-threaded-forged-fittings-supplier.jpg',
-
-    // Stainless 316/316L/316TI Socket Weld Images are missing -> Fallback to 304
-    'stainless-steel-316-socket-weld-fittings-manufacturer': '/images/products/stainless-steel-304-socketweld-fittings-supplier.jpg',
-    'stainless-steel-316l-socket-weld-fittings-manufacturer': '/images/products/stainless-steel-304-socketweld-fittings-supplier.jpg',
-    'stainless-steel-316ti-socket-weld-fittings-manufacturer': '/images/products/stainless-steel-304-socketweld-fittings-supplier.jpg',
-
-    // Stainless 347 (Typo in file)
-    'stainless-steel-347-socket-weld-fittings-manufacturer': '/images/products/stainless-steel-347-sockeweld-fittings-supplier.jpg',
-
-    // Titanium Fallback
-    'titanium-alloy-grade-2-socket-weld-fittings-manufacturer': '/images/products/titanium-alloy-socketweld-fittings-supplier.jpg',
-
-    // Generic Nickel Alloy Mappings
-    'nickel-alloy-socket-weld-fittings-manufacturer': 'nickel-alloy-200-socketweld-fittings-supplier.jpg',
-    'titanium-alloy-threaded-forged-fittings-manufacturer': 'titanium-alloy-grade-2-threaded-forged-fittings-supplier.jpg',
-    'cupro-nickel-threaded-forged-fittings-manufacturer': 'cupro-nickel-90-10-threaded-forged-fittings-supplier.jpg'
+    // Legacy Fallbacks (Keep these if needed for older links)
+    'stainless-steel-threaded-forged-fittings-manufacturer': 'products/item1.jpg',
 };
 
 export function getImageForProduct(slug: string): string {
@@ -56,32 +23,62 @@ export function getImageForProduct(slug: string): string {
 
     // 1. Check explicit mapping first
     if (SPECIFIC_MAPPINGS[slug]) {
-        return `/images/products/${SPECIFIC_MAPPINGS[slug]}`;
+        // Fix: Removed extra 'products/' prefix as mappings now include full relative path
+        return `/images/${SPECIFIC_MAPPINGS[slug]}`;
     }
 
-    // 2. Try variations
+    // 2. Try Smart Pattern Matching
     const cleanSlug = slug.toLowerCase();
 
-    // Variation A: exact match
-    // Variation B: swap 'manufacturer' with 'supplier'
-    // Variation C: swap 'socket-weld' with 'socketweld' AND 'manufacturer' with 'supplier'
+    // --- Alloy Steel Specifics (Granular) ---
+    if (cleanSlug.includes('alloy')) {
+        if (cleanSlug.includes('p11')) return '/images/our-work/products/alloy-steel/alloy-steel-astm-a335-p11-seamless-pipe-exporter.jpg';
+        if (cleanSlug.includes('p12')) return '/images/our-work/products/alloy-steel/alloy-steel-astm-a335-p12-seamless-pipe-exporter.jpg';
+        if (cleanSlug.includes('p22')) return '/images/our-work/products/alloy-steel/alloy-steel-astm-a335-p22-seamless-pipe-exporter.jpg';
+        if (cleanSlug.includes('p91')) return '/images/our-work/products/alloy-steel/alloy-steel-asme-sa213-t91-seamless-pipe.jpg';
+        if (cleanSlug.includes('p5')) return '/images/our-work/products/alloy-steel/alloy-steel-astm-a335-p5-seamless-pipe.jpg';
+        if (cleanSlug.includes('t11')) return '/images/our-work/products/alloy-steel/alloy-steel-asme-sa213-t11-seamless-pipe.jpg';
 
-    const possibleNames = [
-        `${cleanSlug}.jpg`,
-        `${cleanSlug.replace('manufacturer', 'supplier')}.jpg`,
-        `${cleanSlug.replace('socket-weld', 'socketweld').replace('manufacturer', 'supplier')}.jpg`,
-        `${cleanSlug.replace('socket-weld', 'socketweld')}.jpg`
-    ];
-
-    // Since we can't check file existence on client/server easily without fs (which isn't available in client components), 
-    // we have to rely on the most likely legacy pattern which is 'supplier' + 'socketweld'.
-    // However, for the 'best guess' without confirming file existence, we might return the 'supplier' version 
-    // as that matches 90% of the legacy file list.
-
-    // For specific known patterns that differ:
-    if (cleanSlug.includes('socket-weld')) {
-        return `/images/products/${cleanSlug.replace('socket-weld', 'socketweld').replace('manufacturer', 'supplier')}.jpg`;
+        if (!cleanSlug.includes('nickel')) return '/images/our-work/alloy-steel-pipes.jpg';
     }
 
-    return `/images/products/${cleanSlug.replace('manufacturer', 'supplier')}.jpg`;
+    // --- Stainless Steel Specifics ---
+    if (cleanSlug.includes('stainless') || cleanSlug.includes('304') || cleanSlug.includes('316')) {
+        if (cleanSlug.includes('304')) return '/images/our-work/products/stainless-steel/stainless-steel-304-pipes.jpg';
+        if (cleanSlug.includes('316')) return '/images/our-work/products/stainless-steel/stainless-steel-316-pipes.jpg';
+        if (cleanSlug.includes('310')) return '/images/our-work/products/stainless-steel/stainless-steel-310-pipes.jpg';
+        if (cleanSlug.includes('321')) return '/images/our-work/products/stainless-steel/stainless-steel-321-pipes.jpg';
+        if (cleanSlug.includes('904l')) return '/images/our-work/products/stainless-steel/stainless-steel-904l-pipes.jpg';
+    }
+
+    // --- Carbon Steel Specifics ---
+    if (cleanSlug.includes('carbon')) {
+        if (cleanSlug.includes('a106')) return '/images/our-work/products/carbon-steel/carbon-steel-pipe-a106-grade-b-seamless-pipes-tubes.jpg';
+        if (cleanSlug.includes('api') && cleanSlug.includes('5l')) return '/images/our-work/products/carbon-steel/carbon-steel-api-5l-x52-psl1-seamless-pipe-tubes.jpg';
+        if (cleanSlug.includes('a333')) return '/images/our-work/products/carbon-steel/carbon-steel-pipe-a333-gr-6-seamless-pipe-tubes.jpg';
+        if (cleanSlug.includes('a53')) return '/images/our-work/products/carbon-steel/carbon-steel-pipe-a53-gr-b-seamless-pipe-tubes.jpg';
+        return '/images/our-work/products/carbon-steel/carbon-steel-pipes-tubes.jpg';
+    }
+
+    // --- Other Material Categories ---
+    if (cleanSlug.includes('nickel')) return '/images/our-work/products/nickel-alloy/nickel-alloy-pipes-tubes.jpg';
+    if (cleanSlug.includes('duplex')) return '/images/our-work/duplex-steel-pipes-tubes.jpg';
+    if (cleanSlug.includes('titanium')) return '/images/our-work/titanium-pipes-tubes.jpg';
+    if (cleanSlug.includes('aluminium')) return '/images/our-work/aluminium-pipes-tubes.jpg';
+    if (cleanSlug.includes('monel')) return '/images/our-work/monel-pipes-tubes.jpg';
+    if (cleanSlug.includes('hastelloy')) return '/images/our-work/hastelloy-pipes-tubes.jpg';
+    if (cleanSlug.includes('inconel')) return '/images/our-work/inconel-pipes.jpg';
+
+    // Sheets/Plates specific
+    if (cleanSlug.includes('sheet') || cleanSlug.includes('plate') || cleanSlug.includes('coil')) {
+        return '/images/our-work/products/stainless-steel/stainless-steel-polished-pipes.jpg';
+    }
+
+    // Bars specific
+    if (cleanSlug.includes('bar') || cleanSlug.includes('rod')) {
+        return '/images/our-work/products/stainless-steel/stainless-steel-round-pipes.jpg';
+    }
+
+    // Default Fallback to a safe image (Stainless Seamless)
+    return '/images/our-work/products/stainless-steel/stainless-steel-seamless-pipe.jpg';
 }

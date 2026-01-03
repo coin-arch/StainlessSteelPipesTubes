@@ -10,9 +10,9 @@ export default function AboutUsPage() {
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-black opacity-90" />
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="text-blue-500 font-bold tracking-[0.2em] uppercase text-sm mb-6 block animate-fade-in-up">The Metal Ministry Legacy</span>
+                    <span className="text-blue-500 font-bold tracking-[0.2em] uppercase text-sm mb-6 block animate-fade-in-up">Since 1990</span>
                     <h1 className="text-5xl lg:text-7xl font-extrabold mb-8 leading-tight animate-fade-in-up delay-100 tracking-tight">
-                        Forging <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Excellence</span> <br /> Since Inception
+                        Standard of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Excellence</span> <br /> Global Supply
                     </h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in-up delay-200">
                         Dedicated to precision manufacturing and global supply of high-pressure forged fittings and flanges.
@@ -30,11 +30,11 @@ export default function AboutUsPage() {
                         <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">A Partner You Can Trust</h3>
                         <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-justify font-light">
                             <p>
-                                <strong>Metal Ministry Inc.</strong> is a premier manufacturer and exporter specializing in high-quality Ferrous and Non-Ferrous metal components.
-                                Under the visionary leadership of <strong className="text-blue-600">Mr. Dinesh Chandan</strong>, we have established ourselves as a reliable partner for industries ranging from Oil & Gas to Pharmaceuticals.
+                                <strong>Stainless Steel Pipes Tubes</strong> is a premier manufacturer and exporter specializing in high-quality Ferrous and Non-Ferrous metal piping solutions.
+                                Under the visionary leadership of our management team, we have established ourselves as a reliable partner for industries ranging from Oil & Gas to Pharmaceuticals.
                             </p>
                             <p>
-                                We prioritize quality above all else. Our state-of-the-art manufacturing facility ensures that every product—whether it be Stainless Steel Fittings or High Nickel Alloys—meets rigorous international standards (ASME, ASTM, DIN).
+                                We prioritize quality above all else. Our state-of-the-art manufacturing facility ensures that every product—whether it be Stainless Steel Pipes, Tubes, or High Nickel Alloys—meets rigorous international standards (ASME, ASTM, DIN).
                             </p>
                             <p>
                                 Located in the heart of Mumbai's metal market, we maintain a vast inventory to ensure rapid delivery for urgent specialized requirements.
@@ -45,8 +45,8 @@ export default function AboutUsPage() {
                         <div className="absolute inset-0 bg-blue-600 rounded-3xl transform rotate-3 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
                         <div className="relative bg-gray-100 dark:bg-slate-800 rounded-3xl h-[500px] overflow-hidden shadow-2xl">
                             <Image
-                                src="/images/who-we-are.jpg"
-                                alt="Metal Ministry Workshop"
+                                src="/images/about/about1.jpg"
+                                alt="Advanced Manufacturing Facility"
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />

@@ -16,11 +16,61 @@ type Product = {
 export default function ProductCatalog({ products }: { products: Product[] }) {
     const [query, setQuery] = useState('');
 
-    const filteredProducts = products.filter(p =>
-        p.slug !== 'about-us' && // Explicit client-side filter
-        !p.title.toLowerCase().includes('pipes') &&
-        (p.title.toLowerCase().includes(query.toLowerCase()) ||
-            p.meta_description?.toLowerCase().includes(query.toLowerCase()))
+    // 1. Filter out Garbage/Template items
+    // Comprehensive BLOCKLIST based on Database Audit
+    const garbageTitles = [
+        'accordians', 'alert box', 'all widgets', 'animation effects', 'button', 'buttons',
+        'carousel', 'carousel sliders', 'cart', 'checkout', 'client review', 'contact form',
+        'counters', 'devider', 'dividers', 'faq 1', 'faq 2', 'gallery filters', 'google map',
+        'header', 'footer', 'help desk', 'icon box', 'icon box style', 'image box',
+        'images box content', 'images effects', 'list group', 'list groups', 'login',
+        'modal popup', 'pagination', 'portfolio', 'pricing table', 'privacy policy',
+        'product details', 'progress bar', 'register', 'separators', 'service details',
+        'services 1', 'services 2', 'shop listing', 'shop grid', 'shop sidebar',
+        'shop widgets', 'tabs', 'team', 'testimonials', 'toggles', 'video', 'wishlist',
+        'blog grid', 'blog half', 'blog large', 'blog single'
+    ];
+
+    const cleanProducts = products.filter(p => {
+        const titleLower = p.title.toLowerCase();
+        const slugLower = p.slug.toLowerCase();
+
+        // Explicit Page Exclusions (Don't show static pages as products)
+        if (p.slug === 'about-us' || p.slug === 'contact-us') return false;
+
+        // Filter out "Location Spam" (Pipe Tube Exporter in X)
+        if (titleLower.includes('pipe tube exporter in')) return false;
+        if (slugLower.includes('pipe-tube-exporter-in')) return false;
+
+        // Filter out Template Shortcodes & Garbage
+        if (garbageTitles.some(t => titleLower.includes(t) || slugLower.includes(t))) return false;
+
+        // Filter out "Dummy" items
+        if (titleLower.includes('dummy')) return false;
+
+        return true;
+    });
+
+    // 2. Deduplicate by Slug AND Normalized Title
+    const seenMap = new Map();
+    const uniqueProducts = cleanProducts.filter(p => {
+        // Normalize title: remove "Exporter", "Manufacturer", "Supplier", "India", etc. and trim
+        const normalizedTitle = p.title.toLowerCase()
+            .replace(/\b(exporter|manufacturer|supplier|india|mumbai)\b/g, '')
+            .replace(/[^a-z0-9]/g, '')
+            .trim();
+
+        if (seenMap.has(p.slug)) return false;
+        if (seenMap.has(normalizedTitle)) return false;
+
+        seenMap.set(p.slug, true);
+        seenMap.set(normalizedTitle, true);
+        return true;
+    });
+
+    const filteredProducts = uniqueProducts.filter(p =>
+        p.title.toLowerCase().includes(query.toLowerCase()) ||
+        p.meta_description?.toLowerCase().includes(query.toLowerCase())
     );
 
     return (
@@ -80,7 +130,7 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
                                             {product.title}
                                         </h3>
                                         <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow font-light leading-relaxed">
-                                            {product.meta_description || 'Premium quality forged fittings manufactured to international standards.'}
+                                            {product.meta_description || 'Premium quality Stainless Steel Pipes and Tubes manufactured to international standards.'}
                                         </p>
 
                                         <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">

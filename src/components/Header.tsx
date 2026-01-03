@@ -61,7 +61,7 @@ export default function Header() {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                             src="/images/logo.png"
-                            alt="Metal Ministry Inc. Logo"
+                            alt="Stainless Steel Pipes Tubes Logo"
                             className={`h-16 md:h-20 w-auto object-contain transition-all duration-500 ${logoClass}`}
                         />
                     </Link>
@@ -77,17 +77,17 @@ export default function Header() {
                             <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full`}></span>
                         </Link>
 
-                        {/* Threaded Fittings Dropdown */}
+                        {/* Pipes & Tubes Dropdown */}
                         <div
                             className="relative group h-full"
-                            onMouseEnter={() => handleMouseEnter('threaded')}
+                            onMouseEnter={() => handleMouseEnter('pipes')}
                             onMouseLeave={handleMouseLeave}
                         >
                             <button className={`flex items-center gap-1 ${textColorClass} font-bold tracking-wide text-sm uppercase py-4 group`}>
-                                Threaded Fittings <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'threaded' ? 'rotate-180' : ''}`} />
+                                Pipes & Tubes <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'pipes' ? 'rotate-180' : ''}`} />
                             </button>
                             <AnimatePresence>
-                                {activeDropdown === 'threaded' && (
+                                {activeDropdown === 'pipes' && (
                                     <motion.div
                                         initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
                                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -95,77 +95,74 @@ export default function Header() {
                                         transition={{ duration: 0.2 }}
                                         className="absolute top-full -left-10 w-[600px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-lg border border-gray-100 overflow-hidden grid grid-cols-2 p-6 pb-16 gap-x-8 gap-y-4"
                                     >
-                                        <Link href="/products/stainless-steel-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Stainless Steel</Link>
-                                        <Link href="/products/carbon-steel-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Carbon Steel</Link>
-                                        <Link href="/products/alloy-steel-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Alloy Steel</Link>
-                                        <Link href="/products/duplex-steel-s31803-s32205-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Duplex Steel</Link>
-                                        <Link href="/products/super-duplex-steel-s32750-s32760-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Super Duplex Steel</Link>
-                                        <Link href="/products/nickel-alloy-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Nickel Alloys</Link>
-                                        <Link href="/products/inconel-alloy-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Inconel</Link>
-                                        <Link href="/products/monel-alloy-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Monel</Link>
-                                        <Link href="/products/hastelloy-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Hastelloy</Link>
-                                        <Link href="/products/titanium-alloy-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Titanium</Link>
-                                        <Link href="/products/cupro-nickel-threaded-forged-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Cupro Nickel</Link>
+                                        <div className="col-span-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Pipes</div>
+                                        <Link href="/products/stainless-steel-pipe-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Stainless Steel Pipe</Link>
+                                        <Link href="/products/carbon-steel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Carbon Steel Pipe</Link>
+                                        <Link href="/products/nickel-alloy-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Nickel Alloy Pipe</Link>
+                                        <Link href="/products/alloy-steel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Alloy Steel Pipe</Link>
 
-                                        {/* Footer Link */}
-                                        <div className="absolute bottom-0 left-0 w-full bg-gray-50 border-t border-gray-100 p-3 text-center">
-                                            <Link href="/products" className="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline flex items-center justify-center gap-1">
-                                                View Complete Catalog <ArrowRight size={14} />
-                                            </Link>
-                                        </div>
+                                        <div className="col-span-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-4">Tubes</div>
+                                        <Link href="/products/stainless-steel-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Stainless Steel Tube</Link>
+                                        <Link href="/products/duplex-steel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Duplex Steel Tube</Link>
+                                        <Link href="/products/super-duplex-steel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Super Duplex Tube</Link>
+                                        <Link href="/products/inconel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Inconel Tube</Link>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
                         </div>
 
-                        {/* Socket Weld Fittings Dropdown */}
+                        {/* Other Products Dropdown */}
                         <div
                             className="relative group h-full"
-                            onMouseEnter={() => handleMouseEnter('socketweld')}
+                            onMouseEnter={() => handleMouseEnter('other')}
                             onMouseLeave={handleMouseLeave}
                         >
                             <button className={`flex items-center gap-1 ${textColorClass} font-bold tracking-wide text-sm uppercase py-4 group`}>
-                                Socket Weld Fittings <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'socketweld' ? 'rotate-180' : ''}`} />
+                                Other Products <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === 'other' ? 'rotate-180' : ''}`} />
                             </button>
                             <AnimatePresence>
-                                {activeDropdown === 'socketweld' && (
+                                {activeDropdown === 'other' && (
                                     <motion.div
                                         initial={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
                                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                                         exit={{ opacity: 0, y: 10, filter: 'blur(5px)' }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute top-full -left-10 w-[600px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-lg border border-gray-100 overflow-hidden grid grid-cols-2 p-6 pb-16 gap-x-8 gap-y-4"
+                                        className="absolute top-full -left-10 w-[500px] bg-white/95 backdrop-blur-xl shadow-2xl rounded-lg border border-gray-100 overflow-hidden grid grid-cols-1 p-6 gap-y-4"
                                     >
-                                        <Link href="/products/stainless-steel-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Stainless Steel</Link>
-                                        <Link href="/products/carbon-steel-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Carbon Steel</Link>
-                                        <Link href="/products/alloy-steel-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Alloy Steel</Link>
-                                        <Link href="/products/duplex-steel-s31803-s32205-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Duplex Steel</Link>
-                                        <Link href="/products/super-duplex-steel-s32750-s32760-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Super Duplex Steel</Link>
-                                        <Link href="/products/nickel-alloy-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Nickel Alloys</Link>
-                                        <Link href="/products/inconel-alloy-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Inconel</Link>
-                                        <Link href="/products/monel-alloy-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Monel</Link>
-                                        <Link href="/products/hastelloy-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Hastelloy</Link>
-                                        <Link href="/products/titanium-alloy-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Titanium</Link>
-                                        <Link href="/products/cupro-nickel-socket-weld-fittings-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Cupro Nickel</Link>
+                                        <Link href="/products/monel-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Monel Pipes & Tubes</Link>
+                                        <Link href="/products/hastelloy-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Hastelloy Pipes & Tubes</Link>
+                                        <Link href="/products/titanium-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Titanium Pipes & Tubes</Link>
+                                        <Link href="/products/aluminium-pipes-tubes-manufacturer" className="text-sm font-medium text-gray-600 hover:text-blue-600 hover:translate-x-1 transition-all">Aluminium Pipes & Tubes</Link>
 
-                                        {/* Footer Link */}
-                                        <div className="absolute bottom-0 left-0 w-full bg-gray-50 border-t border-gray-100 p-3 text-center">
-                                            <Link href="/products" className="text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline flex items-center justify-center gap-1">
-                                                View Complete Catalog <ArrowRight size={14} />
-                                            </Link>
-                                        </div>
+                                        <div className="border-t border-gray-100 my-2"></div>
+                                        <Link href="/products" className="text-sm font-bold text-blue-600 flex items-center gap-2">View Full Catalog <ArrowRight size={14} /></Link>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
                         </div>
+
+                        {/* Technical Dropdown */}
+                        <div className="relative group">
+                            <button className={`${textColorClass} font-bold tracking-wide text-sm uppercase flex items-center gap-1 py-4 group-hover:text-blue-500 transition-colors`}>
+                                Technical <ChevronDown size={14} />
+                            </button>
+                            <div className="absolute top-full left-0 w-64 bg-white dark:bg-slate-900 shadow-xl rounded-b-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 border-t-2 border-blue-500">
+                                <Link href="/technical/chemical-composition" className="block px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-blue-600 transition-colors border-b border-gray-100 dark:border-slate-800">
+                                    Chemical Composition
+                                </Link>
+                                <Link href="/technical/international-standards" className="block px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-blue-600 transition-colors border-b border-gray-100 dark:border-slate-800">
+                                    International Standards
+                                </Link>
+                                <Link href="/technical/weight-calculator" className="block px-6 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-blue-600 transition-colors">
+                                    Weight Calculator
+                                </Link>
+                            </div>
+                        </div>
+
+
 
                         <Link href="/quality" className={`${textColorClass} font-bold tracking-wide text-sm uppercase transition-colors relative group py-2`}>
                             Quality
-                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full`}></span>
-                        </Link>
-
-                        <Link href="/certificates" className={`${textColorClass} font-bold tracking-wide text-sm uppercase transition-colors relative group py-2`}>
-                            Certificates
                             <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full`}></span>
                         </Link>
 
@@ -207,13 +204,16 @@ export default function Header() {
                             <nav className="p-6 flex flex-col space-y-6 mt-10">
                                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-gray-800">Home</Link>
                                 <Link href="/about-us" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-gray-800">About Us</Link>
-                                <div className="text-2xl font-bold text-gray-800">Threaded Fittings</div>
-                                <Link href="/products/stainless-steel-threaded-forged-fittings-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Stainless Steel</Link>
-                                <Link href="/products/carbon-steel-threaded-forged-fittings-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Carbon Steel</Link>
 
-                                <div className="text-2xl font-bold text-gray-800 mt-4">Socket Weld Fittings</div>
-                                <Link href="/products/stainless-steel-socket-weld-fittings-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Stainless Steel</Link>
-                                <Link href="/products/carbon-steel-socket-weld-fittings-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Carbon Steel</Link>
+                                <div className="text-2xl font-bold text-gray-800">Pipes & Tubes</div>
+                                <Link href="/products/stainless-steel-pipe-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Stainless Steel Pipe</Link>
+                                <Link href="/products/stainless-steel-tubes-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Stainless Steel Tube</Link>
+                                <Link href="/products/nickel-alloy-pipes-tubes-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Nickel Alloy Pipe</Link>
+                                <Link href="/products/alloy-steel-pipes-tubes-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Alloy Steel Pipe</Link>
+
+                                <div className="text-2xl font-bold text-gray-800 mt-4">Other Products</div>
+                                <Link href="/products/monel-pipes-tubes-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Monel</Link>
+                                <Link href="/products/hastelloy-pipes-tubes-manufacturer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-gray-600 pl-4">Hastelloy</Link>
 
                                 <Link href="/quality" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-gray-800 mt-4">Quality</Link>
                                 <Link href="/certificates" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold text-gray-800">Certificates</Link>
