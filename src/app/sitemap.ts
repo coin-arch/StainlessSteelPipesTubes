@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { createClient } from '@/lib/supabase';
 
-const BASE_URL = 'https://forged-fitting.com'; // Update this if your domain is different
+const BASE_URL = 'https://stainlesssteelpipestubes.com'; // Update this if your domain is different
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const supabase = createClient();
@@ -20,6 +20,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
+    // Fetch all blogs
+    const { data: blogs } = await supabase
+        .from('post')
+        .select('slug, updated_at')
+        .eq('type', 'blog')
+        .eq('company_id', process.env.NEXT_PUBLIC_COMPANY_ID!);
+
+    const blogEntries: MetadataRoute.Sitemap = (blogs || []).map((blog) => ({
+        url: `${BASE_URL}/blogs/${blog.slug}`,
+        lastModified: new Date(blog.updated_at),
+        changeFrequency: 'weekly',
+        priority: 0.7,
+    }));
+
     return [
         {
             url: BASE_URL,
@@ -34,6 +48,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: `${BASE_URL}/quality`, // Assumed quality page exists based on header
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${BASE_URL}/technical/chemical-composition`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_URL}/technical/international-standards`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_URL}/technical/weight-calculator`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: `${BASE_URL}/contact-us`,
             lastModified: new Date(),
             changeFrequency: 'yearly',
@@ -45,6 +83,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'daily',
             priority: 0.9,
         },
+        {
+            url: `${BASE_URL}/blogs`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.8,
+        },
         ...productEntries,
+        ...blogEntries,
     ];
 }
